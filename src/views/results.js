@@ -1,8 +1,10 @@
 import { h } from '../ui/dom.js';
 import { recipes, subs } from '../data/index.js';
 import { rankRecipes, groupByMissing } from '../engine/matching.js';
-import { pantryStore } from '../state.js';
+import { filterRecipes } from '../engine/filters.js';
+import { pantryStore, filterStore } from '../state.js';
 import { recipeCard } from '../ui/recipeCard.js';
+import { filterPanel } from '../ui/filterPanel.js';
 
 const SHOWN_MISSING = 3; // au-delà : section repliée
 
@@ -19,28 +21,40 @@ export function resultsView() {
     return view;
   }
 
-  const ranked = rankRecipes(recipes, pantryStore.set(), subs);
-  const { complètes, parManquants } = groupByMissing(ranked);
+  const panel = filterPanel();
+  const list = h('div.results-list');
+  view.append(panel, list);
 
-  view.append(h('p.lead',
-    `${complètes.length} recette${complètes.length > 1 ? 's' : ''} prête${complètes.length > 1 ? 's' : ''} · ${ranked.length} au total avec vos ${pantryStore.size} ingrédients.`));
+  const section = (title, items, cls = '') =>
+    h(`div.rgroup${cls}`, h('div.divider', h('span.rgroup-title', title)), h('div.rlist', items.map(recipeCard)));
 
-  const section = (title, list, cls = '') =>
-    h(`div.rgroup${cls}`, h('div.divider', h('span.rgroup-title', title)), h('div.rlist', list.map(recipeCard)));
+  const render = () => {
+    const pool = filterRecipes(recipes, filterStore.get());
+    const ranked = rankRecipes(pool, pantryStore.set(), subs);
+    const { complètes, parManquants } = groupByMissing(ranked);
+    const out = [h('p.lead',
+      `${complètes.length} recette${complètes.length > 1 ? 's' : ''} prête${complètes.length > 1 ? 's' : ''} · ${ranked.length} au total avec vos ${pantryStore.size} ingrédients` +
+      (pool.length < recipes.length ? ` (${pool.length} recettes après filtres).` : '.'))];
 
-  if (complètes.length) view.append(section(`✦ Prêtes à cuisiner (${complètes.length})`, complètes, '.ready'));
-  else view.append(h('article.parchment', h('p', 'Aucune recette complète pour l’instant. Voici les plus proches :')));
+    if (!ranked.length) out.push(h('article.parchment', h('p', 'Aucune recette ne correspond. Essayez d’assouplir les filtres.')));
+    else if (complètes.length) out.push(section(`✦ Prêtes à cuisiner (${complètes.length})`, complètes, '.ready'));
+    else out.push(h('article.parchment', h('p', 'Aucune recette complète pour l’instant. Voici les plus proches :')));
 
-  const rest = [];
-  for (const [n, list] of [...parManquants].sort((a, b) => a[0] - b[0])) {
-    if (n <= SHOWN_MISSING) view.append(section(`Il manque ${n} ingrédient${n > 1 ? 's' : ''} (${list.length})`, list));
-    else rest.push(...list);
-  }
-  if (rest.length) {
-    view.append(h('details.more',
-      h('summary', `Plus de ${SHOWN_MISSING} ingrédients manquants (${rest.length})`),
-      h('div.rlist', rest.map(recipeCard))
-    ));
-  }
+    const rest = [];
+    for (const [n, items] of [...parManquants].sort((a, b) => a[0] - b[0])) {
+      if (n <= SHOWN_MISSING) out.push(section(`Il manque ${n} ingrédient${n > 1 ? 's' : ''} (${items.length})`, items));
+      else rest.push(...items);
+    }
+    if (rest.length) {
+      out.push(h('details.more',
+        h('summary', `Plus de ${SHOWN_MISSING} ingrédients manquants (${rest.length})`),
+        h('div.rlist', rest.map(recipeCard))
+      ));
+    }
+    list.replaceChildren(...out);
+  };
+  const unsub = filterStore.subscribe(render);
+  view.cleanup = () => { unsub(); panel.cleanup(); };
+  render();
   return view;
 }

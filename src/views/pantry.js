@@ -1,4 +1,4 @@
-import { h } from '../ui/dom.js';
+import { h, confirmButton } from '../ui/dom.js';
 import { burst } from '../ui/sparkles.js';
 import { catalog, recipes, subs } from '../data/index.js';
 import { rankRecipes } from '../engine/matching.js';
@@ -51,10 +51,7 @@ export function pantryView() {
   });
 
   const total = h('span.badge.big');
-  const clear = h('button.btn.btn-ghost', {
-    type: 'button',
-    onclick: () => pantryStore.size && confirm('Décocher tous les ingrédients ?') && pantryStore.clear()
-  }, 'Tout décocher');
+  const clear = confirmButton('Tout décocher', 'Confirmer ?', () => pantryStore.clear());
   const cta = h('a.btn.cta', { href: '#/recettes' });
 
   const refresh = () => {

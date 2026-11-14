@@ -200,3 +200,60 @@ body[data-route='cuisine'] #app { padding-bottom: calc(var(--safe-b) + 1rem); pa
 .cook-nav { display: grid; grid-template-columns: 1fr 1.4fr; gap: .6rem; }
 .nav-btn { min-height: 56px; font-size: .9rem; white-space: nowrap; padding-inline: .6rem; }
 .nav-btn:disabled { opacity: .35; }
+
+/* ===== Phase 4 : favoris, filtres, portions, courses ===== */
+.rcard-wrap { position: relative; }
+.rcard-wrap .rcard { padding-right: 2.6rem; height: 100%; }
+.fav {
+  position: absolute; top: .45rem; right: .45rem; z-index: 2; width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.35rem; line-height: 1; cursor: pointer;
+  color: var(--gold-2); background: rgba(10, 15, 44, .08); border: 1px solid rgba(138, 93, 18, .35);
+  transition: transform .2s var(--ease);
+}
+.fav.on { color: var(--gold-1); background: var(--night-1); border-color: var(--gold-1); text-shadow: 0 0 8px var(--gold-1); }
+.fav:active { transform: scale(.85); }
+.hero { position: relative; }
+.hero .fav { top: .8rem; right: .8rem; }
+
+/* Filtres */
+.filters { margin-bottom: .6rem; border-radius: var(--radius); background: rgba(20, 28, 74, .6); border: 1px solid rgba(242, 193, 78, .3); }
+.filters summary { cursor: pointer; padding: .65rem 1rem; font-family: var(--font-head); font-weight: 700; color: var(--gold-0); list-style: none; display: flex; align-items: center; gap: .4rem; }
+.filters summary::-webkit-details-marker { display: none; }
+.filters summary .badge { background: var(--gold-1); color: var(--night-0); }
+.filter-body { padding: 0 1rem 1rem; display: grid; gap: .7rem; }
+.frow { display: grid; gap: .35rem; }
+.flabel { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: rgba(253, 246, 227, .7); font-weight: 700; }
+.fopts { display: flex; flex-wrap: wrap; gap: .35rem; }
+.chip-sm { min-height: 36px; padding: .25rem .7rem; font-size: .82rem; }
+.chip-sm[aria-pressed='true']::after { content: none; }
+.freset { justify-self: start; }
+
+/* Portions */
+.ings-head { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.ings-head h3 { margin: 0; }
+.stepper { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--ink); }
+.step-btn {
+  width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem; font-weight: 900; cursor: pointer;
+  border: 2px solid var(--gold-2); background: var(--night-1); color: var(--gold-0);
+}
+.step-btn:disabled { opacity: .35; cursor: default; }
+.pcount { min-width: 1ch; display: inline-block; text-align: center; }
+.scale-note { font-size: .8rem; font-style: italic; margin: .4rem 0 0; }
+.scale-note:empty { display: none; }
+.shop-btn { margin-top: .8rem; width: 100%; color: var(--gold-3); border-color: var(--gold-2); min-height: 44px; }
+.shop-btn:disabled { color: #2f7d5b; border-color: #2f7d5b; }
+
+/* Courses */
+.shop-group + .shop-group { margin-top: 1rem; }
+.shop-group h3 { font-size: .95rem; margin-bottom: .3rem; }
+.shop-group ul { list-style: none; margin: 0; padding: 0; }
+.shop-item label { display: flex; align-items: flex-start; gap: .6rem; padding: .5rem 0; cursor: pointer; border-bottom: 1px dashed rgba(138, 93, 18, .3); }
+.shop-item:last-child label { border-bottom: 0; }
+.shop-item input { width: 22px; height: 22px; margin-top: .1rem; accent-color: var(--gold-2); flex: none; }
+.shop-ico { font-size: 1.2rem; }
+.shop-txt { color: var(--ink); line-height: 1.35; }
+.shop-qty { color: var(--ink-soft); font-weight: 700; }
+.shop-txt small { display: block; color: var(--ink-soft); font-size: .75rem; }
+.shop-item.done .shop-txt { text-decoration: line-through; opacity: .55; }
+.shop-actions { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-top: 1rem; }
+.shop-actions .btn:disabled { opacity: .45; }

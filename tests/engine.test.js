@@ -79,4 +79,36 @@ test('recalcul des quantités', () => {
   assert.equal(formatQuantity(1.5, ''), '1½');
   assert.equal(formatQuantity(2, 'gousse'), '2 gousses');
   assert.equal(formatQuantity(null, 'selon goût'), 'selon goût');
+  assert.equal(scaleQuantity(1, '', 4, 3), 1);
+  assert.equal(scaleQuantity(2, 'cs', 4, 3), 1.5);
+  assert.equal(formatQuantity(0.35, 'kg'), '350 g');
+  assert.equal(formatQuantity(0.5, 'l'), '50 cl');
+});
+
+import { filterRecipes, activeCount, DEFAULT_FILTERS } from '../src/engine/filters.js';
+import { addToList, toggleItem, removeChecked } from '../src/engine/shopping.js';
+import { totalTime } from '../src/engine/matching.js';
+
+test('filtres temps, régime, budget', () => {
+  assert.equal(filterRecipes(recipes, DEFAULT_FILTERS).length, recipes.length);
+  const f = { ...DEFAULT_FILTERS, tempsMax: 30, régimes: ['végétarien', 'sans gluten'], budgets: ['€'] };
+  const out = filterRecipes(recipes, f);
+  assert.ok(out.length > 0 && out.length < recipes.length);
+  for (const r of out) {
+    assert.ok(totalTime(r) <= 30 && r.régime.includes('végétarien') && r.régime.includes('sans gluten') && r.budget === '€');
+  }
+  assert.equal(activeCount(f), 4);
+});
+
+test('liste de courses : fusion par unité, selon goût, recochage', () => {
+  let l = addToList([], [{ nom: 'creme', quantité: 20, unité: 'cl' }, { nom: 'sel', quantité: null, unité: 'selon goût' }], 'a');
+  l = addToList(l, [{ nom: 'creme', quantité: 10, unité: 'cl' }, { nom: 'creme', quantité: 2, unité: 'cs' }], 'b');
+  const creme = l.find((i) => i.id === 'creme');
+  assert.deepEqual(creme.qtés, { cl: 30, cs: 2 });
+  assert.deepEqual(creme.recettes, ['a', 'b']);
+  assert.deepEqual(l.find((i) => i.id === 'sel').qtés, { 'selon goût': null });
+  l = toggleItem(l, 'sel');
+  assert.equal(removeChecked(l).length, 1);
+  l = addToList(l, [{ nom: 'sel', quantité: null, unité: 'selon goût' }], 'c');
+  assert.equal(l.find((i) => i.id === 'sel').coché, false);
 });

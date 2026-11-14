@@ -10,18 +10,19 @@ import { route, fallback, start, go } from './router.js';
 import { startSparkles } from './ui/sparkles.js';
 import { mountTimerWidget } from './ui/timer.js';
 import { setupPwa } from './pwa.js';
-import { placeholder } from './views/placeholder.js';
 import { pantryView } from './views/pantry.js';
 import { resultsView } from './views/results.js';
 import { recipeView } from './views/recipe.js';
 import { cookingView } from './views/cooking.js';
+import { favoritesView } from './views/favorites.js';
+import { shoppingView } from './views/shopping.js';
 
 route('garde-manger', pantryView);
 route('recettes', resultsView);
 route('recette', recipeView);
 route('cuisine', cookingView);
-route('favoris', placeholder('Favoris', '⭐', 'Vos recettes préférées seront rassemblées ici.'));
-route('courses', placeholder('Courses', '🛒', 'La liste de courses se remplira avec les ingrédients manquants.'));
+route('favoris', favoritesView);
+route('courses', shoppingView);
 fallback(() => (go('garde-manger'), document.createDocumentFragment()));
 
 // Onglet actif (la fiche recette reste rattachée à « Recettes »)

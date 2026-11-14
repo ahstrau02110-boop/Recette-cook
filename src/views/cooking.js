@@ -6,7 +6,7 @@ import { pantryStore } from '../state.js';
 import { modeInfo, fmtClock } from '../ui/modes.js';
 import { timer, ring_svg } from '../ui/timer.js';
 import { go } from '../router.js';
-import { ingredientRow } from './recipe.js';
+import { ingredientRow, portionsFor } from './recipe.js';
 
 // Garde l'écran allumé (Wake Lock), réacquis au retour sur l'onglet
 function keepAwake(onState) {
@@ -52,7 +52,7 @@ export function cookingView(id, startStep = '0') {
   next.onclick = (e) => (i < n - 1 ? show(i + 1) : finish(e));
 
   const match = matchRecipe(r, pantryStore.set(), subs);
-  const drawer = h('details.cook-ings', h('summary', '🧺 Ingrédients'), h('ul.ings', r.ingrédients.map((ing) => ingredientRow(ing, match))));
+  const drawer = h('details.cook-ings', h('summary', `🧺 Ingrédients · 👥 ${portionsFor(r)}`), h('ul.ings', r.ingrédients.map((ing) => ingredientRow(ing, match, r.portions, portionsFor(r)))));
 
   const btn = (label, fn, cls = '.btn.btn-ghost') => h(`button${cls}`, { type: 'button', onclick: fn }, label);
 

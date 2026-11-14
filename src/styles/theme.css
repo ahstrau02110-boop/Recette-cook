@@ -180,3 +180,4 @@ h1, h2, h3 { font-family: var(--font-head); letter-spacing: .02em; margin: 0 0 .
 @keyframes burst {
   to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(.3); opacity: 0; }
 }
+.btn.armed { border-color: var(--ruby); color: var(--ruby); box-shadow: 0 0 12px rgba(255, 122, 138, .45); }

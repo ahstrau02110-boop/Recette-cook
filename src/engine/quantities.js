@@ -3,13 +3,15 @@
 const FINE = new Set(['g', 'ml']);
 const HUNDREDTHS = new Set(['kg', 'l']);
 const WHOLE = new Set(['cl', 'pincée', 'feuille']);
+const SPOONS = new Set(['cs', 'cc']);
 
 /** Arrondi adapté à l'unité (5 g près, demi-pièce, etc.) */
 export function roundQuantity(v, unit) {
   if (FINE.has(unit)) return v >= 100 ? Math.round(v / 10) * 10 : Math.max(5, Math.round(v / 5) * 5);
   if (HUNDREDTHS.has(unit)) return Math.round(v * 20) / 20;
   if (WHOLE.has(unit)) return Math.max(1, Math.round(v));
-  return Math.max(0.25, Math.round(v * 4) / 4); // pièces, cs, cc, gousses… au quart près
+  if (SPOONS.has(unit)) return Math.max(0.25, Math.round(v * 4) / 4); // cuillères au quart près
+  return Math.max(0.5, Math.round(v * 2) / 2); // pièces, gousses, boîtes… à la demie près
 }
 
 export function scaleQuantity(q, unit, from, to) {
@@ -31,6 +33,8 @@ export function formatNumber(n) {
 /** Libellé complet : "2 gousses", "400 g", "selon goût" */
 export function formatQuantity(q, unit) {
   if (q == null) return unit || '';
+  if (unit === 'kg' && q < 1) return formatQuantity(Math.round(q * 1000), 'g');
+  if (unit === 'l' && q < 1) return formatQuantity(Math.round(q * 100), 'cl');
   const n = formatNumber(q);
   if (!unit) return n;
   const plural = q > 1 && /^(gousse|tranche|feuille|branche|boîte|cube|sachet|pot|bouquet|pincée)\b/.test(unit);

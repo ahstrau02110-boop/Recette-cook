@@ -2,6 +2,8 @@ import { h } from './dom.js';
 import { catalog } from '../data/index.js';
 import { totalTime } from '../engine/matching.js';
 import { fmtDuration } from './modes.js';
+import { burst } from './sparkles.js';
+import { favStore, filterStore } from '../state.js';
 
 const RÉGIME_ICO = { végétarien: '🌱', végan: '🌿', 'sans gluten': '🌾', 'sans lactose': '🥛' };
 export const régimeBadges = (r, all = false) =>
@@ -16,18 +18,39 @@ export const stars = (score) => {
   return h('span.stars', { 'aria-label': `${n} étoiles sur 5` }, '★'.repeat(n) + '☆'.repeat(5 - n));
 };
 
+/** Bouton favori (étoile) */
+export function favButton(r) {
+  const b = h('button.fav', { type: 'button' });
+  const render = () => {
+    const on = favStore.has(r.id);
+    b.textContent = on ? '★' : '☆';
+    b.classList.toggle('on', on);
+    b.setAttribute('aria-pressed', String(on));
+    b.setAttribute('aria-label', on ? `Retirer ${r.nom} des favoris` : `Ajouter ${r.nom} aux favoris`);
+  };
+  b.onclick = (e) => {
+    e.preventDefault();
+    if (favStore.toggle(r.id)) burst(e.clientX, e.clientY, 10);
+    render();
+    b.dispatchEvent(new CustomEvent('favchange', { bubbles: true }));
+  };
+  render();
+  return b;
+}
+
 /** Carte recette façon carte à collectionner */
 export function recipeCard(match) {
   const r = match.recipe;
   const tier = match.complete ? 'gold' : match.missing.length === 1 ? 'sky' : 'silver';
-  return h(`a.rcard.tier-${tier}`, { href: `#/recette/${r.id}` },
+  const portions = filterStore.get().portions ?? r.portions;
+  return h('div.rcard-wrap', h(`a.rcard.tier-${tier}`, { href: `#/recette/${r.id}` },
     h('div.medal', h('span', r.emoji)),
     h('div.rcard-body',
       h('h3.rcard-title', r.nom),
       h('div.rcard-meta',
         stars(match.score),
         h('span', `⏱ ${fmtDuration(totalTime(r))}`),
-        h('span', `👥 ${r.portions}`),
+        h('span', `👥 ${portions}`),
         h('span.budget', r.budget)
       ),
       h('div.tags', régimeBadges(r)),
@@ -35,5 +58,5 @@ export function recipeCard(match) {
       match.substituted.length > 0 &&
         h('p.rcard-subs', h('b', 'Remplace : '), match.substituted.map((s) => `${nameOf(s.ingrédient)} → ${s.avec.map(nameOf).join(' + ')}`).join(' ; '))
     )
-  );
+  ), favButton(r));
 }

@@ -1,0 +1,1229 @@
+{
+  "catégories": [
+    {
+      "id": "essentiels",
+      "nom": "Essentiels",
+      "emoji": "🧂",
+      "ingrédients": [
+        {
+          "id": "sel",
+          "nom": "Sel",
+          "emoji": "🧂",
+          "synonymes": [
+            "sel fin",
+            "gros sel",
+            "fleur de sel"
+          ]
+        },
+        {
+          "id": "poivre",
+          "nom": "Poivre",
+          "emoji": "⚫",
+          "synonymes": [
+            "poivre noir",
+            "poivre moulu"
+          ]
+        },
+        {
+          "id": "huile",
+          "nom": "Huile",
+          "emoji": "🫒",
+          "synonymes": [
+            "huile d'olive",
+            "huile de tournesol",
+            "huile végétale",
+            "huile de colza"
+          ]
+        },
+        {
+          "id": "eau",
+          "nom": "Eau",
+          "emoji": "💧",
+          "synonymes": [
+            "eau du robinet"
+          ]
+        },
+        {
+          "id": "bouillon_volaille",
+          "nom": "Bouillon de volaille",
+          "emoji": "🍲",
+          "synonymes": [
+            "cube de volaille",
+            "bouillon de poule",
+            "bouillon de poulet",
+            "fond de volaille"
+          ],
+          "tags": [
+            "viande",
+            "gluten"
+          ]
+        },
+        {
+          "id": "bouillon_legumes",
+          "nom": "Bouillon de légumes",
+          "emoji": "🥣",
+          "synonymes": [
+            "cube de légumes",
+            "court-bouillon",
+            "bouillon végétal"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "bouillon_boeuf",
+          "nom": "Bouillon de bœuf",
+          "emoji": "🍖",
+          "synonymes": [
+            "cube de bœuf",
+            "fond de veau",
+            "bouillon pot-au-feu"
+          ],
+          "tags": [
+            "viande",
+            "gluten"
+          ]
+        },
+        {
+          "id": "vinaigre",
+          "nom": "Vinaigre",
+          "emoji": "🍶",
+          "synonymes": [
+            "vinaigre balsamique",
+            "vinaigre de vin",
+            "vinaigre de cidre"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legumes",
+      "nom": "Légumes",
+      "emoji": "🥕",
+      "ingrédients": [
+        {
+          "id": "oignon",
+          "nom": "Oignon",
+          "emoji": "🧅",
+          "synonymes": [
+            "oignon jaune",
+            "oignon rouge",
+            "oignon blanc"
+          ]
+        },
+        {
+          "id": "echalote",
+          "nom": "Échalote",
+          "emoji": "🧅",
+          "synonymes": [
+            "échalotes"
+          ]
+        },
+        {
+          "id": "ail",
+          "nom": "Ail",
+          "emoji": "🧄",
+          "synonymes": [
+            "gousse d'ail",
+            "ail semoule",
+            "ail en poudre"
+          ]
+        },
+        {
+          "id": "carotte",
+          "nom": "Carotte",
+          "emoji": "🥕",
+          "synonymes": [
+            "carottes"
+          ]
+        },
+        {
+          "id": "pomme_de_terre",
+          "nom": "Pomme de terre",
+          "emoji": "🥔",
+          "synonymes": [
+            "patate",
+            "patates",
+            "pommes de terre"
+          ]
+        },
+        {
+          "id": "patate_douce",
+          "nom": "Patate douce",
+          "emoji": "🍠",
+          "synonymes": [
+            "patates douces"
+          ]
+        },
+        {
+          "id": "courgette",
+          "nom": "Courgette",
+          "emoji": "🥒",
+          "synonymes": [
+            "courgettes"
+          ]
+        },
+        {
+          "id": "aubergine",
+          "nom": "Aubergine",
+          "emoji": "🍆",
+          "synonymes": [
+            "aubergines"
+          ]
+        },
+        {
+          "id": "poivron",
+          "nom": "Poivron",
+          "emoji": "🫑",
+          "synonymes": [
+            "poivron rouge",
+            "poivron vert",
+            "poivron jaune"
+          ]
+        },
+        {
+          "id": "tomate",
+          "nom": "Tomate",
+          "emoji": "🍅",
+          "synonymes": [
+            "tomates fraîches",
+            "tomates cerises",
+            "tomates grappe"
+          ]
+        },
+        {
+          "id": "champignon",
+          "nom": "Champignons",
+          "emoji": "🍄",
+          "synonymes": [
+            "champignons de Paris",
+            "champignon",
+            "pleurotes"
+          ]
+        },
+        {
+          "id": "poireau",
+          "nom": "Poireau",
+          "emoji": "🥬",
+          "synonymes": [
+            "poireaux"
+          ]
+        },
+        {
+          "id": "brocoli",
+          "nom": "Brocoli",
+          "emoji": "🥦",
+          "synonymes": [
+            "brocolis"
+          ]
+        },
+        {
+          "id": "chou_fleur",
+          "nom": "Chou-fleur",
+          "emoji": "🥦",
+          "synonymes": [
+            "chou fleur"
+          ]
+        },
+        {
+          "id": "epinards",
+          "nom": "Épinards",
+          "emoji": "🥬",
+          "synonymes": [
+            "épinards surgelés",
+            "pousses d'épinard"
+          ]
+        },
+        {
+          "id": "haricots_verts",
+          "nom": "Haricots verts",
+          "emoji": "🫛",
+          "synonymes": [
+            "haricots verts surgelés"
+          ]
+        },
+        {
+          "id": "petits_pois",
+          "nom": "Petits pois",
+          "emoji": "🫛",
+          "synonymes": [
+            "petits pois surgelés"
+          ]
+        },
+        {
+          "id": "potiron",
+          "nom": "Potiron",
+          "emoji": "🎃",
+          "synonymes": [
+            "courge",
+            "butternut",
+            "potimarron",
+            "citrouille"
+          ]
+        },
+        {
+          "id": "celeri",
+          "nom": "Céleri",
+          "emoji": "🥬",
+          "synonymes": [
+            "céleri branche"
+          ]
+        },
+        {
+          "id": "navet",
+          "nom": "Navet",
+          "emoji": "🥔",
+          "synonymes": [
+            "navets"
+          ]
+        },
+        {
+          "id": "chou",
+          "nom": "Chou vert",
+          "emoji": "🥬",
+          "synonymes": [
+            "chou",
+            "chou frisé",
+            "chou blanc"
+          ]
+        },
+        {
+          "id": "endive",
+          "nom": "Endive",
+          "emoji": "🥬",
+          "synonymes": [
+            "endives",
+            "chicon",
+            "chicons"
+          ]
+        },
+        {
+          "id": "mais",
+          "nom": "Maïs",
+          "emoji": "🌽",
+          "synonymes": [
+            "maïs en boîte",
+            "maïs doux"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fruits",
+      "nom": "Fruits",
+      "emoji": "🍎",
+      "ingrédients": [
+        {
+          "id": "pomme",
+          "nom": "Pomme",
+          "emoji": "🍎",
+          "synonymes": [
+            "pommes"
+          ]
+        },
+        {
+          "id": "poire",
+          "nom": "Poire",
+          "emoji": "🍐",
+          "synonymes": [
+            "poires"
+          ]
+        },
+        {
+          "id": "banane",
+          "nom": "Banane",
+          "emoji": "🍌",
+          "synonymes": [
+            "bananes"
+          ]
+        },
+        {
+          "id": "citron",
+          "nom": "Citron",
+          "emoji": "🍋",
+          "synonymes": [
+            "jus de citron",
+            "citron jaune",
+            "citron vert"
+          ]
+        },
+        {
+          "id": "fruits_rouges",
+          "nom": "Fruits rouges",
+          "emoji": "🍓",
+          "synonymes": [
+            "framboises",
+            "myrtilles",
+            "fruits rouges surgelés"
+          ]
+        },
+        {
+          "id": "raisins_secs",
+          "nom": "Raisins secs",
+          "emoji": "🍇",
+          "synonymes": [
+            "raisins"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "viandes",
+      "nom": "Viandes",
+      "emoji": "🍗",
+      "ingrédients": [
+        {
+          "id": "blanc_poulet",
+          "nom": "Blanc de poulet",
+          "emoji": "🍗",
+          "synonymes": [
+            "filet de poulet",
+            "escalope de poulet",
+            "poulet"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "cuisse_poulet",
+          "nom": "Cuisse de poulet",
+          "emoji": "🍗",
+          "synonymes": [
+            "haut de cuisse",
+            "pilon",
+            "cuisses de poulet"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "dinde",
+          "nom": "Escalope de dinde",
+          "emoji": "🦃",
+          "synonymes": [
+            "dinde",
+            "sauté de dinde",
+            "filet de dinde"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "boeuf_braiser",
+          "nom": "Bœuf à braiser",
+          "emoji": "🥩",
+          "synonymes": [
+            "bœuf bourguignon",
+            "paleron",
+            "joue de bœuf",
+            "macreuse",
+            "gîte"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "boeuf_hache",
+          "nom": "Bœuf haché",
+          "emoji": "🥩",
+          "synonymes": [
+            "viande hachée",
+            "steak haché",
+            "haché"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "porc_echine",
+          "nom": "Sauté de porc",
+          "emoji": "🥩",
+          "synonymes": [
+            "échine de porc",
+            "épaule de porc",
+            "porc"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "saucisse",
+          "nom": "Saucisses",
+          "emoji": "🌭",
+          "synonymes": [
+            "saucisses de Toulouse",
+            "chipolatas",
+            "saucisse"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "lardons",
+          "nom": "Lardons",
+          "emoji": "🥓",
+          "synonymes": [
+            "lardons fumés",
+            "poitrine fumée",
+            "allumettes"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "jambon",
+          "nom": "Jambon",
+          "emoji": "🍖",
+          "synonymes": [
+            "jambon blanc",
+            "dés de jambon",
+            "jambon cuit"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "chorizo",
+          "nom": "Chorizo",
+          "emoji": "🌶️",
+          "synonymes": [
+            "chorizo doux",
+            "chorizo fort"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "veau",
+          "nom": "Veau à blanquette",
+          "emoji": "🥩",
+          "synonymes": [
+            "blanquette de veau",
+            "épaule de veau",
+            "tendron"
+          ],
+          "tags": [
+            "viande"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poissons",
+      "nom": "Poissons & fruits de mer",
+      "emoji": "🐟",
+      "ingrédients": [
+        {
+          "id": "saumon",
+          "nom": "Saumon",
+          "emoji": "🐟",
+          "synonymes": [
+            "pavé de saumon",
+            "filet de saumon"
+          ],
+          "tags": [
+            "poisson"
+          ]
+        },
+        {
+          "id": "poisson_blanc",
+          "nom": "Poisson blanc",
+          "emoji": "🐟",
+          "synonymes": [
+            "cabillaud",
+            "colin",
+            "lieu",
+            "merlu",
+            "dos de cabillaud",
+            "églefin"
+          ],
+          "tags": [
+            "poisson"
+          ]
+        },
+        {
+          "id": "thon",
+          "nom": "Thon en boîte",
+          "emoji": "🐟",
+          "synonymes": [
+            "thon au naturel",
+            "miettes de thon",
+            "thon"
+          ],
+          "tags": [
+            "poisson"
+          ]
+        },
+        {
+          "id": "crevettes",
+          "nom": "Crevettes",
+          "emoji": "🦐",
+          "synonymes": [
+            "crevettes décortiquées",
+            "gambas"
+          ],
+          "tags": [
+            "poisson"
+          ]
+        },
+        {
+          "id": "moules",
+          "nom": "Moules",
+          "emoji": "🦪",
+          "synonymes": [
+            "moules de bouchot"
+          ],
+          "tags": [
+            "poisson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cremerie",
+      "nom": "Crèmerie & œufs",
+      "emoji": "🥚",
+      "ingrédients": [
+        {
+          "id": "oeuf",
+          "nom": "Œufs",
+          "emoji": "🥚",
+          "synonymes": [
+            "œuf",
+            "oeuf",
+            "oeufs"
+          ],
+          "tags": [
+            "animal"
+          ]
+        },
+        {
+          "id": "lait",
+          "nom": "Lait",
+          "emoji": "🥛",
+          "synonymes": [
+            "lait demi-écrémé",
+            "lait entier",
+            "lait écrémé"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "beurre",
+          "nom": "Beurre",
+          "emoji": "🧈",
+          "synonymes": [
+            "beurre doux",
+            "beurre demi-sel"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "creme",
+          "nom": "Crème fraîche",
+          "emoji": "🥛",
+          "synonymes": [
+            "crème liquide",
+            "crème épaisse",
+            "crème entière",
+            "crème légère",
+            "crème"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "fromage_rape",
+          "nom": "Fromage râpé",
+          "emoji": "🧀",
+          "synonymes": [
+            "gruyère",
+            "emmental",
+            "comté râpé",
+            "râpé"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "parmesan",
+          "nom": "Parmesan",
+          "emoji": "🧀",
+          "synonymes": [
+            "grana padano"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "mozzarella",
+          "nom": "Mozzarella",
+          "emoji": "🧀",
+          "synonymes": [
+            "mozza"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "chevre",
+          "nom": "Fromage de chèvre",
+          "emoji": "🧀",
+          "synonymes": [
+            "bûche de chèvre",
+            "chèvre"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "fromage_frais",
+          "nom": "Fromage frais",
+          "emoji": "🧀",
+          "synonymes": [
+            "carré frais",
+            "fromage à tartiner",
+            "ricotta",
+            "St Môret"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        },
+        {
+          "id": "yaourt",
+          "nom": "Yaourt nature",
+          "emoji": "🥛",
+          "synonymes": [
+            "yaourt",
+            "yaourt grec",
+            "fromage blanc"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feculents",
+      "nom": "Féculents & céréales",
+      "emoji": "🍚",
+      "ingrédients": [
+        {
+          "id": "riz",
+          "nom": "Riz",
+          "emoji": "🍚",
+          "synonymes": [
+            "riz basmati",
+            "riz long",
+            "riz thaï",
+            "riz blanc"
+          ]
+        },
+        {
+          "id": "riz_rond",
+          "nom": "Riz rond",
+          "emoji": "🍚",
+          "synonymes": [
+            "riz arborio",
+            "riz à risotto",
+            "riz carnaroli",
+            "riz à dessert"
+          ]
+        },
+        {
+          "id": "pates",
+          "nom": "Pâtes",
+          "emoji": "🍝",
+          "synonymes": [
+            "penne",
+            "coquillettes",
+            "fusilli",
+            "macaronis",
+            "pâtes courtes",
+            "vermicelles"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "spaghetti",
+          "nom": "Spaghetti",
+          "emoji": "🍝",
+          "synonymes": [
+            "linguine",
+            "tagliatelles",
+            "pâtes longues"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "semoule",
+          "nom": "Semoule",
+          "emoji": "🥣",
+          "synonymes": [
+            "couscous",
+            "semoule fine",
+            "semoule moyenne"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "boulgour",
+          "nom": "Boulgour",
+          "emoji": "🌾",
+          "synonymes": [
+            "blé concassé"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "quinoa",
+          "nom": "Quinoa",
+          "emoji": "🌾",
+          "synonymes": [
+            "quinoa blanc"
+          ]
+        },
+        {
+          "id": "farine",
+          "nom": "Farine",
+          "emoji": "🌾",
+          "synonymes": [
+            "farine de blé",
+            "farine T45",
+            "farine T55"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "chapelure",
+          "nom": "Chapelure",
+          "emoji": "🍞",
+          "synonymes": [
+            "panure"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legumineuses",
+      "nom": "Légumineuses",
+      "emoji": "🫘",
+      "ingrédients": [
+        {
+          "id": "lentilles_corail",
+          "nom": "Lentilles corail",
+          "emoji": "🫘",
+          "synonymes": [
+            "lentilles rouges"
+          ]
+        },
+        {
+          "id": "lentilles_vertes",
+          "nom": "Lentilles vertes",
+          "emoji": "🫘",
+          "synonymes": [
+            "lentilles du Puy",
+            "lentilles brunes",
+            "lentilles"
+          ]
+        },
+        {
+          "id": "pois_chiches",
+          "nom": "Pois chiches",
+          "emoji": "🫘",
+          "synonymes": [
+            "pois chiches en boîte",
+            "pois chiche"
+          ]
+        },
+        {
+          "id": "haricots_rouges",
+          "nom": "Haricots rouges",
+          "emoji": "🫘",
+          "synonymes": [
+            "haricots rouges en boîte",
+            "red kidney"
+          ]
+        },
+        {
+          "id": "haricots_blancs",
+          "nom": "Haricots blancs",
+          "emoji": "🫘",
+          "synonymes": [
+            "lingots",
+            "cocos",
+            "haricots blancs en boîte",
+            "mogettes"
+          ]
+        },
+        {
+          "id": "pois_casses",
+          "nom": "Pois cassés",
+          "emoji": "🫛",
+          "synonymes": [
+            "pois cassés verts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conserves",
+      "nom": "Conserves",
+      "emoji": "🥫",
+      "ingrédients": [
+        {
+          "id": "tomates_concassees",
+          "nom": "Tomates concassées",
+          "emoji": "🥫",
+          "synonymes": [
+            "pulpe de tomate",
+            "tomates pelées",
+            "tomates en boîte"
+          ]
+        },
+        {
+          "id": "coulis_tomate",
+          "nom": "Coulis de tomate",
+          "emoji": "🥫",
+          "synonymes": [
+            "passata",
+            "sauce tomate",
+            "purée de tomate"
+          ]
+        },
+        {
+          "id": "concentre_tomate",
+          "nom": "Concentré de tomate",
+          "emoji": "🥫",
+          "synonymes": [
+            "double concentré",
+            "triple concentré"
+          ]
+        },
+        {
+          "id": "lait_coco",
+          "nom": "Lait de coco",
+          "emoji": "🥥",
+          "synonymes": [
+            "crème de coco"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sucre",
+      "nom": "Épicerie sucrée",
+      "emoji": "🍯",
+      "ingrédients": [
+        {
+          "id": "sucre",
+          "nom": "Sucre",
+          "emoji": "🍬",
+          "synonymes": [
+            "sucre en poudre",
+            "cassonade",
+            "sucre roux",
+            "sucre blanc"
+          ]
+        },
+        {
+          "id": "sucre_vanille",
+          "nom": "Sucre vanillé",
+          "emoji": "🍦",
+          "synonymes": [
+            "vanille",
+            "extrait de vanille",
+            "gousse de vanille"
+          ]
+        },
+        {
+          "id": "chocolat",
+          "nom": "Chocolat noir",
+          "emoji": "🍫",
+          "synonymes": [
+            "chocolat pâtissier",
+            "chocolat dessert",
+            "pépites de chocolat"
+          ]
+        },
+        {
+          "id": "levure",
+          "nom": "Levure chimique",
+          "emoji": "🧁",
+          "synonymes": [
+            "poudre à lever"
+          ]
+        },
+        {
+          "id": "miel",
+          "nom": "Miel",
+          "emoji": "🍯",
+          "synonymes": [
+            "miel liquide"
+          ],
+          "tags": [
+            "animal"
+          ]
+        },
+        {
+          "id": "maizena",
+          "nom": "Fécule de maïs",
+          "emoji": "🌽",
+          "synonymes": [
+            "maïzena",
+            "maizena",
+            "fécule"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "condiments",
+      "nom": "Condiments & alcools",
+      "emoji": "🍶",
+      "ingrédients": [
+        {
+          "id": "moutarde",
+          "nom": "Moutarde",
+          "emoji": "🟡",
+          "synonymes": [
+            "moutarde de Dijon",
+            "moutarde à l'ancienne"
+          ]
+        },
+        {
+          "id": "sauce_soja",
+          "nom": "Sauce soja",
+          "emoji": "🥢",
+          "synonymes": [
+            "soja",
+            "sauce soja salée"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "vin_blanc",
+          "nom": "Vin blanc",
+          "emoji": "🍾",
+          "synonymes": [
+            "vin blanc sec"
+          ]
+        },
+        {
+          "id": "vin_rouge",
+          "nom": "Vin rouge",
+          "emoji": "🍷",
+          "synonymes": [
+            "vin rouge corsé"
+          ]
+        },
+        {
+          "id": "biere",
+          "nom": "Bière",
+          "emoji": "🍺",
+          "synonymes": [
+            "bière brune",
+            "bière blonde",
+            "bière ambrée"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epices",
+      "nom": "Épices & herbes",
+      "emoji": "🌿",
+      "ingrédients": [
+        {
+          "id": "curry",
+          "nom": "Curry",
+          "emoji": "🟠",
+          "synonymes": [
+            "curry en poudre",
+            "pâte de curry",
+            "colombo"
+          ]
+        },
+        {
+          "id": "paprika",
+          "nom": "Paprika",
+          "emoji": "🌶️",
+          "synonymes": [
+            "paprika fumé",
+            "paprika doux"
+          ]
+        },
+        {
+          "id": "cumin",
+          "nom": "Cumin",
+          "emoji": "🟤",
+          "synonymes": [
+            "cumin moulu"
+          ]
+        },
+        {
+          "id": "ras_el_hanout",
+          "nom": "Ras el hanout",
+          "emoji": "🟤",
+          "synonymes": [
+            "épices couscous",
+            "épices tajine"
+          ]
+        },
+        {
+          "id": "herbes_provence",
+          "nom": "Herbes de Provence",
+          "emoji": "🌿",
+          "synonymes": [
+            "origan",
+            "mélange italien",
+            "herbes séchées"
+          ]
+        },
+        {
+          "id": "thym",
+          "nom": "Thym",
+          "emoji": "🌿",
+          "synonymes": [
+            "thym séché"
+          ]
+        },
+        {
+          "id": "laurier",
+          "nom": "Laurier",
+          "emoji": "🍃",
+          "synonymes": [
+            "feuille de laurier",
+            "bouquet garni"
+          ]
+        },
+        {
+          "id": "persil",
+          "nom": "Persil",
+          "emoji": "🌿",
+          "synonymes": [
+            "persil plat",
+            "persil frisé"
+          ]
+        },
+        {
+          "id": "basilic",
+          "nom": "Basilic",
+          "emoji": "🌿",
+          "synonymes": [
+            "basilic frais"
+          ]
+        },
+        {
+          "id": "ciboulette",
+          "nom": "Ciboulette",
+          "emoji": "🌿",
+          "synonymes": [
+            "aneth"
+          ]
+        },
+        {
+          "id": "coriandre",
+          "nom": "Coriandre",
+          "emoji": "🌿",
+          "synonymes": [
+            "coriandre fraîche"
+          ]
+        },
+        {
+          "id": "gingembre",
+          "nom": "Gingembre",
+          "emoji": "🫚",
+          "synonymes": [
+            "gingembre en poudre",
+            "gingembre frais"
+          ]
+        },
+        {
+          "id": "cannelle",
+          "nom": "Cannelle",
+          "emoji": "🟤",
+          "synonymes": [
+            "cannelle en poudre",
+            "bâton de cannelle"
+          ]
+        },
+        {
+          "id": "muscade",
+          "nom": "Muscade",
+          "emoji": "🟤",
+          "synonymes": [
+            "noix de muscade"
+          ]
+        },
+        {
+          "id": "piment",
+          "nom": "Piment",
+          "emoji": "🌶️",
+          "synonymes": [
+            "piment d'Espelette",
+            "chili",
+            "piment de Cayenne"
+          ]
+        },
+        {
+          "id": "curcuma",
+          "nom": "Curcuma",
+          "emoji": "🟡",
+          "synonymes": [
+            "safran des Indes"
+          ]
+        }
+      ]
+    }
+  ]
+}

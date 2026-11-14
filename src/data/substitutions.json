@@ -1,0 +1,570 @@
+[
+  {
+    "ingrédient": "creme",
+    "alternatives": [
+      [
+        "lait",
+        "beurre"
+      ],
+      [
+        "lait_coco"
+      ],
+      [
+        "fromage_frais"
+      ],
+      [
+        "yaourt"
+      ]
+    ],
+    "note": "Lait + beurre : 15 cl de lait + 30 g de beurre pour 20 cl de crème."
+  },
+  {
+    "ingrédient": "lait",
+    "alternatives": [
+      [
+        "creme",
+        "eau"
+      ],
+      [
+        "lait_coco"
+      ]
+    ],
+    "note": "Crème allongée d’eau à parts égales."
+  },
+  {
+    "ingrédient": "beurre",
+    "alternatives": [
+      [
+        "huile"
+      ]
+    ],
+    "note": "Moitié moins d’huile que de beurre."
+  },
+  {
+    "ingrédient": "huile",
+    "alternatives": [
+      [
+        "beurre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "fromage_frais",
+    "alternatives": [
+      [
+        "creme"
+      ],
+      [
+        "yaourt"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "yaourt",
+    "alternatives": [
+      [
+        "fromage_frais"
+      ],
+      [
+        "creme"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "lait_coco",
+    "alternatives": [
+      [
+        "creme"
+      ],
+      [
+        "lait",
+        "beurre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "bouillon_volaille",
+    "alternatives": [
+      [
+        "bouillon_legumes"
+      ],
+      [
+        "bouillon_boeuf"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "bouillon_legumes",
+    "alternatives": [
+      [
+        "bouillon_volaille"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "bouillon_boeuf",
+    "alternatives": [
+      [
+        "bouillon_volaille"
+      ],
+      [
+        "bouillon_legumes"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "vin_blanc",
+    "alternatives": [
+      [
+        "bouillon_volaille",
+        "vinaigre"
+      ],
+      [
+        "bouillon_legumes",
+        "vinaigre"
+      ]
+    ],
+    "note": "Bouillon + 1 cs de vinaigre."
+  },
+  {
+    "ingrédient": "vin_rouge",
+    "alternatives": [
+      [
+        "bouillon_boeuf",
+        "vinaigre"
+      ],
+      [
+        "bouillon_boeuf"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "biere",
+    "alternatives": [
+      [
+        "bouillon_boeuf",
+        "sucre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "oignon",
+    "alternatives": [
+      [
+        "echalote"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "echalote",
+    "alternatives": [
+      [
+        "oignon"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "riz_rond",
+    "alternatives": [
+      [
+        "riz"
+      ]
+    ],
+    "note": "Texture moins crémeuse."
+  },
+  {
+    "ingrédient": "riz",
+    "alternatives": [
+      [
+        "riz_rond"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "pates",
+    "alternatives": [
+      [
+        "spaghetti"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "spaghetti",
+    "alternatives": [
+      [
+        "pates"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "semoule",
+    "alternatives": [
+      [
+        "boulgour"
+      ],
+      [
+        "quinoa"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "boulgour",
+    "alternatives": [
+      [
+        "semoule"
+      ],
+      [
+        "quinoa"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "quinoa",
+    "alternatives": [
+      [
+        "boulgour"
+      ],
+      [
+        "semoule"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "tomates_concassees",
+    "alternatives": [
+      [
+        "coulis_tomate"
+      ],
+      [
+        "tomate"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "coulis_tomate",
+    "alternatives": [
+      [
+        "tomates_concassees"
+      ],
+      [
+        "concentre_tomate",
+        "eau"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "concentre_tomate",
+    "alternatives": [
+      [
+        "coulis_tomate"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "tomate",
+    "alternatives": [
+      [
+        "tomates_concassees"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "parmesan",
+    "alternatives": [
+      [
+        "fromage_rape"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "fromage_rape",
+    "alternatives": [
+      [
+        "parmesan"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "mozzarella",
+    "alternatives": [
+      [
+        "fromage_rape"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "chevre",
+    "alternatives": [
+      [
+        "fromage_frais"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "persil",
+    "alternatives": [
+      [
+        "ciboulette"
+      ],
+      [
+        "coriandre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "coriandre",
+    "alternatives": [
+      [
+        "persil"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "ciboulette",
+    "alternatives": [
+      [
+        "persil"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "basilic",
+    "alternatives": [
+      [
+        "herbes_provence"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "thym",
+    "alternatives": [
+      [
+        "herbes_provence"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "herbes_provence",
+    "alternatives": [
+      [
+        "thym"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "ras_el_hanout",
+    "alternatives": [
+      [
+        "cumin",
+        "cannelle"
+      ],
+      [
+        "curry"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "curry",
+    "alternatives": [
+      [
+        "ras_el_hanout"
+      ],
+      [
+        "curcuma",
+        "cumin"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "paprika",
+    "alternatives": [
+      [
+        "piment"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "blanc_poulet",
+    "alternatives": [
+      [
+        "dinde"
+      ],
+      [
+        "cuisse_poulet"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "dinde",
+    "alternatives": [
+      [
+        "blanc_poulet"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "cuisse_poulet",
+    "alternatives": [
+      [
+        "blanc_poulet"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "lardons",
+    "alternatives": [
+      [
+        "jambon"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "saucisse",
+    "alternatives": [
+      [
+        "chorizo"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "poisson_blanc",
+    "alternatives": [
+      [
+        "saumon"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "saumon",
+    "alternatives": [
+      [
+        "poisson_blanc"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "haricots_rouges",
+    "alternatives": [
+      [
+        "haricots_blancs"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "haricots_blancs",
+    "alternatives": [
+      [
+        "haricots_rouges"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "lentilles_vertes",
+    "alternatives": [
+      [
+        "lentilles_corail"
+      ]
+    ],
+    "note": "Les lentilles corail se défont à la cuisson : réduire le temps de moitié."
+  },
+  {
+    "ingrédient": "patate_douce",
+    "alternatives": [
+      [
+        "pomme_de_terre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "potiron",
+    "alternatives": [
+      [
+        "patate_douce"
+      ],
+      [
+        "carotte"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "sucre",
+    "alternatives": [
+      [
+        "miel"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "miel",
+    "alternatives": [
+      [
+        "sucre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "maizena",
+    "alternatives": [
+      [
+        "farine"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "chapelure",
+    "alternatives": [
+      [
+        "farine"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "citron",
+    "alternatives": [
+      [
+        "vinaigre"
+      ]
+    ],
+    "note": "Pour l’acidité uniquement."
+  },
+  {
+    "ingrédient": "epinards",
+    "alternatives": [
+      [
+        "poireau"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "navet",
+    "alternatives": [
+      [
+        "pomme_de_terre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "chou_fleur",
+    "alternatives": [
+      [
+        "brocoli"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "brocoli",
+    "alternatives": [
+      [
+        "chou_fleur"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "sucre_vanille",
+    "alternatives": [
+      [
+        "sucre"
+      ]
+    ]
+  }
+]

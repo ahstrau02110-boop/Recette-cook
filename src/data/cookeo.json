@@ -1,0 +1,19 @@
+{
+  "modèle": "Moulinex Cookeo+",
+  "capacité_litres": 6,
+  "personnes_max": 6,
+  "modes": [
+    { "id": "pression", "nom": "Cuisson sous pression", "usage": "plats rapides, légumineuses, viandes, riz" },
+    { "id": "vapeur", "nom": "Vapeur", "usage": "légumes, poisson (panier vapeur)" },
+    { "id": "dorer", "nom": "Dorer", "niveaux": ["moyen", "fort"], "usage": "faire revenir oignons, viandes" },
+    { "id": "mijoter", "nom": "Mijoter", "usage": "risotto, sauces, cuisson douce à couvercle ouvert" },
+    { "id": "cuisson_douce", "nom": "Cuisson douce", "usage": "ragoûts et viandes à feu doux" },
+    { "id": "rechauffer", "nom": "Réchauffer", "usage": "plats déjà cuits" }
+  ],
+  "automatique": {
+    "maintien_au_chaud": "auto en fin de cuisson, jusqu'à 1h30",
+    "relâche_pression": "automatique",
+    "départ_différé": true
+  },
+  "accessoires": ["panier vapeur"]
+}

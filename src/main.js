@@ -15,12 +15,14 @@ import { resultsView } from './views/results.js';
 import { recipeView } from './views/recipe.js';
 import { cookingView } from './views/cooking.js';
 import { favoritesView } from './views/favorites.js';
+import { catalogView } from './views/catalog.js';
 import { shoppingView } from './views/shopping.js';
 
 route('garde-manger', pantryView);
 route('recettes', resultsView);
 route('recette', recipeView);
 route('cuisine', cookingView);
+route('catalogue', catalogView);
 route('favoris', favoritesView);
 route('courses', shoppingView);
 fallback(() => (go('garde-manger'), document.createDocumentFragment()));

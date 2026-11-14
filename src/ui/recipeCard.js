@@ -3,7 +3,8 @@ import { catalog } from '../data/index.js';
 import { totalTime } from '../engine/matching.js';
 import { fmtDuration } from './modes.js';
 import { burst } from './sparkles.js';
-import { favStore, filterStore } from '../state.js';
+import { favStore } from '../state.js';
+import { portionsFor, addMissingToShopping } from '../recipeActions.js';
 
 const RÉGIME_ICO = { végétarien: '🌱', végan: '🌿', 'sans gluten': '🌾', 'sans lactose': '🥛' };
 export const régimeBadges = (r, all = false) =>
@@ -38,11 +39,34 @@ export function favButton(r) {
   return b;
 }
 
-/** Carte recette façon carte à collectionner */
-export function recipeCard(match) {
+/** Boutons d'action : Cuisiner / Liste de courses */
+function cardActions(match) {
+  const r = match.recipe;
+  const shop = h('button.btn.btn-ghost.act', { type: 'button' });
+  if (match.missing.length) {
+    shop.textContent = `🛒 Courses (${match.missing.length})`;
+    shop.title = 'Ajouter les ingrédients manquants à la liste de courses';
+    shop.onclick = (e) => {
+      addMissingToShopping(r, match);
+      burst(e.clientX, e.clientY, 10);
+      shop.textContent = '✓ Ajouté';
+      shop.disabled = true;
+    };
+  } else {
+    shop.textContent = '✓ Tout est là';
+    shop.disabled = true;
+  }
+  return h('div.rcard-actions',
+    h('a.btn.act', { href: `#/cuisine/${r.id}` }, '🍳 Cuisiner'),
+    shop
+  );
+}
+
+/** Carte recette façon carte à collectionner (actions = boutons Cuisiner / Courses) */
+export function recipeCard(match, { actions = false } = {}) {
   const r = match.recipe;
   const tier = match.complete ? 'gold' : match.missing.length === 1 ? 'sky' : 'silver';
-  const portions = filterStore.get().portions ?? r.portions;
+  const portions = portionsFor(r);
   return h('div.rcard-wrap', h(`a.rcard.tier-${tier}`, { href: `#/recette/${r.id}` },
     h('div.medal', h('span', r.emoji)),
     h('div.rcard-body',
@@ -58,5 +82,5 @@ export function recipeCard(match) {
       match.substituted.length > 0 &&
         h('p.rcard-subs', h('b', 'Remplace : '), match.substituted.map((s) => `${nameOf(s.ingrédient)} → ${s.avec.map(nameOf).join(' + ')}`).join(' ; '))
     )
-  ), favButton(r));
+  ), favButton(r), actions && cardActions(match));
 }

@@ -2,7 +2,8 @@ import { h } from '../ui/dom.js';
 import { recipeById, subs } from '../data/index.js';
 import { matchRecipe } from '../engine/matching.js';
 import { formatQuantity, scaleQuantity } from '../engine/quantities.js';
-import { pantryStore, shoppingStore, filterStore } from '../state.js';
+import { pantryStore } from '../state.js';
+import { portionsFor, setPortionsFor, addMissingToShopping } from '../recipeActions.js';
 import { burst } from '../ui/sparkles.js';
 import { cookeo } from '../data/index.js';
 import { modeInfo, fmtDuration, fmtClock } from '../ui/modes.js';
@@ -45,9 +46,6 @@ export function timerButton(r, i, step) {
   return b;
 }
 
-// Portions choisies par recette (session), partagées avec le mode cuisine
-const chosenPortions = new Map();
-export const portionsFor = (r) => chosenPortions.get(r.id) ?? filterStore.get().portions ?? r.portions;
 
 // Fiche recette
 export function recipeView(id) {
@@ -76,7 +74,7 @@ export function recipeView(id) {
 
   function setPortions(n) {
     portions = Math.min(cookeo.personnes_max, Math.max(1, n));
-    chosenPortions.set(r.id, portions);
+    setPortionsFor(r, portions);
     pCount.textContent = String(portions);
     minus.disabled = portions <= 1;
     plus.disabled = portions >= cookeo.personnes_max;
@@ -94,10 +92,7 @@ export function recipeView(id) {
     shopBtn.textContent = `🛒 Ajouter ${n > 1 ? `les ${n} manquants` : 'le manquant'} aux courses`;
   }
   shopBtn.onclick = (e) => {
-    const needs = r.ingrédients
-      .filter((i) => match.missing.includes(i.nom))
-      .map((i) => ({ nom: i.nom, unité: i.unité, quantité: scaleQuantity(i.quantité, i.unité, r.portions, portions) }));
-    shoppingStore.add(needs, r.id);
+    addMissingToShopping(r, match, portions);
     burst(e.clientX, e.clientY, 12);
     shopBtn.textContent = '✓ Ajouté à la liste de courses';
     shopBtn.disabled = true;
@@ -105,7 +100,7 @@ export function recipeView(id) {
 
   const fav = favButton(r);
   const view = h('section.view.recipe',
-    h('a.back', { href: '#/recettes' }, '← Recettes'),
+    h('a.back', { href: '#/recettes', onclick: (e) => { if (history.length > 1) { e.preventDefault(); history.back(); } } }, '← Retour'),
     h('article.parchment.hero',
       fav,
       h('div.medal.big', h('span', r.emoji)),

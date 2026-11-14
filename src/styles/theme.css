@@ -132,7 +132,7 @@ h1, h2, h3 { font-family: var(--font-head); letter-spacing: .02em; margin: 0 0 .
 /* ----- Barre d'onglets ----- */
 .tabbar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(5, 1fr);
   height: calc(var(--tabbar-h) + var(--safe-b)); padding-bottom: var(--safe-b);
   background: linear-gradient(180deg, rgba(20, 28, 74, .92), rgba(10, 15, 44, .98));
   border-top: 1px solid rgba(242, 193, 78, .45);
@@ -140,7 +140,7 @@ h1, h2, h3 { font-family: var(--font-head); letter-spacing: .02em; margin: 0 0 .
 }
 .tabbar a {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-  color: rgba(253, 246, 227, .65); text-decoration: none; font-size: .72rem; font-weight: 700;
+  color: rgba(253, 246, 227, .65); text-decoration: none; font-size: .66rem; font-weight: 700; white-space: nowrap;
   position: relative; transition: color .2s;
 }
 .tabbar .ico { font-size: 1.35rem; transition: transform .25s var(--ease), filter .25s; }

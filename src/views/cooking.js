@@ -6,7 +6,8 @@ import { pantryStore } from '../state.js';
 import { modeInfo, fmtClock } from '../ui/modes.js';
 import { timer, ring_svg } from '../ui/timer.js';
 import { go } from '../router.js';
-import { ingredientRow, portionsFor } from './recipe.js';
+import { ingredientRow } from './recipe.js';
+import { portionsFor } from '../recipeActions.js';
 
 // Garde l'écran allumé (Wake Lock), réacquis au retour sur l'onglet
 function keepAwake(onState) {

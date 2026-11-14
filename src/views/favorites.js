@@ -16,7 +16,7 @@ export function favoritesView() {
       .map((r) => matchRecipe(r, pantryStore.set(), subs))
       .sort((a, b) => a.missing.length - b.missing.length || b.score - a.score);
     list.replaceChildren(...(matches.length
-      ? matches.map(recipeCard)
+      ? matches.map((m) => recipeCard(m, { actions: true }))
       : [h('article.parchment.empty',
           h('h3', 'Aucun favori'),
           h('p', 'Touchez l’étoile ☆ d’une recette pour la garder ici.'),

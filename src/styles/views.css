@@ -257,3 +257,12 @@ body[data-route='cuisine'] #app { padding-bottom: calc(var(--safe-b) + 1rem); pa
 .shop-item.done .shop-txt { text-decoration: line-through; opacity: .55; }
 .shop-actions { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-top: 1rem; }
 .shop-actions .btn:disabled { opacity: .45; }
+
+/* Catalogue + actions de carte */
+.type-bar { margin: -.4rem 0 .8rem; }
+.rcard-wrap { display: flex; flex-direction: column; }
+.rcard-wrap .rcard { flex: 1; }
+.rcard-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; margin-top: .4rem; }
+.rcard-actions .act { min-height: 40px; font-size: .78rem; padding: .3rem .5rem; text-decoration: none; }
+.rcard-actions .btn-ghost.act { background: rgba(10, 15, 44, .6); }
+.rcard-actions .act:disabled { opacity: .6; }

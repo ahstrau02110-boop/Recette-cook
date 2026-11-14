@@ -10,8 +10,8 @@ const subs = load('substitutions.json');
 const modeIds = new Set(cookeo.modes.map((m) => m.id));
 const ingIds = new Set(catalog.catégories.flatMap((c) => c.ingrédients.map((i) => i.id)));
 
-test('au moins 100 recettes, ids uniques', () => {
-  assert.ok(recipes.length >= 100);
+test('au moins 180 recettes, ids uniques', () => {
+  assert.ok(recipes.length >= 180);
   assert.equal(new Set(recipes.map((r) => r.id)).size, recipes.length);
 });
 
@@ -35,6 +35,8 @@ test('recettes valides vis-à-vis du Cookeo+', () => {
       if (e.mode) assert.ok(modeIds.has(e.mode), `${r.id} : ${e.mode}`);
       if (e.niveau) assert.ok(cookeo.modes.find((m) => m.id === 'dorer').niveaux.includes(e.niveau));
       assert.ok(e.minuteur_s === null || e.minuteur_s > 0);
+      const ids = new Set(r.ingrédients.map((i) => i.nom));
+      for (const x of e.ingrédients) assert.ok(ids.has(x), `${r.id} : étape cite ${x}`);
     }
   }
 });

@@ -6,7 +6,7 @@ import { pantryStore } from '../state.js';
 import { modeInfo, fmtClock } from '../ui/modes.js';
 import { timer, ring_svg } from '../ui/timer.js';
 import { go } from '../router.js';
-import { ingredientRow } from './recipe.js';
+import { ingredientRow, stepIngredients, guideBox } from './recipe.js';
 import { portionsFor } from '../recipeActions.js';
 
 // Garde l'écran allumé (Wake Lock), réacquis au retour sur l'onglet
@@ -44,6 +44,8 @@ export function cookingView(id, startStep = '0') {
   const medal = h('div.cook-mode');
   const text = h('p.cook-text');
   const hint = h('p.cook-hint');
+  const stepIngs = h('div.cook-step-ings');
+  const guide = h('div.cook-guide');
   const ring = ring_svg(200);
   const tBtns = h('div.cook-timer-btns');
   const timerBox = h('div.cook-timer', ring, tBtns);
@@ -93,9 +95,13 @@ export function cookingView(id, startStep = '0') {
       h('strong', s.mode ? m.nom : 'Hors appareil')
     );
     text.textContent = s.texte;
-    hint.textContent = s.mode === 'pression'
-      ? 'Le Cookeo décompte dès la montée en pression : le minuteur sert de repère.'
-      : s.mode === 'vapeur' ? 'Panier vapeur en place, eau dans la cuve.' : '';
+    const ings = stepIngredients(r, s, portionsFor(r));
+    stepIngs.replaceChildren(...(ings ? [h('span.cook-sub', 'Pour cette étape'), ings] : []));
+    const g = guideBox(r, i, true);
+    guide.replaceChildren(...(g ? [g] : []));
+    hint.textContent = s.mode === 'pression' && s.minuteur_s
+      ? 'Astuce : lancez le minuteur ci-dessous quand le Cookeo commence son décompte.'
+      : '';
     [...progress.children].forEach((d, k) => d.classList.toggle('on', k <= i));
     prev.disabled = i === 0;
     next.textContent = i < n - 1 ? 'Suivant →' : '✦ Terminer';
@@ -117,7 +123,7 @@ export function cookingView(id, startStep = '0') {
     ),
     progress,
     other,
-    h('div.cook-card.parchment', stepNo, medal, text, hint, timerBox),
+    h('div.cook-card.parchment', stepNo, medal, text, stepIngs, guide, hint, timerBox),
     drawer,
     h('nav.cook-nav', prev, next)
   );

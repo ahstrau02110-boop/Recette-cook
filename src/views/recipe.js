@@ -9,6 +9,27 @@ import { cookeo } from '../data/index.js';
 import { modeInfo, fmtDuration, fmtClock } from '../ui/modes.js';
 import { timer } from '../ui/timer.js';
 import { régimeBadges, nameOf, stars, favButton } from '../ui/recipeCard.js';
+import { cookeoGuide } from '../ui/guide.js';
+
+/** Ingrédients utilisés à une étape, quantités adaptées aux portions (quantité affichée à la 1re mention seulement) */
+export function stepIngredients(r, step, portions) {
+  if (!step.ingrédients?.length) return null;
+  const idx = r.étapes.indexOf(step);
+  const before = new Set(r.étapes.slice(0, idx).flatMap((e) => e.ingrédients || []));
+  return h('ul.step-ings', step.ingrédients.map((id) => {
+    const ing = r.ingrédients.find((i) => i.nom === id);
+    if (before.has(id)) return h('li.again', nameOf(id));
+    if (ing.quantité == null) return h('li', nameOf(id), h('small', ` ${ing.unité}`));
+    return h('li', h('b', formatQuantity(scaleQuantity(ing.quantité, ing.unité, r.portions, portions), ing.unité)), ' ', nameOf(id));
+  }));
+}
+
+/** Encadré « Sur le Cookeo » d'une étape */
+export function guideBox(r, i, open = false) {
+  const lines = cookeoGuide(r, i);
+  if (!lines.length) return null;
+  return h('details.guide', { open }, h('summary', '📘 Sur le Cookeo'), h('ul', lines.map((l) => h('li', l))));
+}
 
 /** Ligne d'ingrédient avec son état face au garde-manger */
 export function ingredientRow(ing, match, from = 1, to = 1) {
@@ -55,12 +76,15 @@ export function recipeView(id) {
   const timerBtns = [];
   let portions = portionsFor(r);
 
+  const stepIngBoxes = r.étapes.map(() => h('div.step-ings-box'));
   const steps = r.étapes.map((s, i) => {
     const btn = s.minuteur_s && timerButton(r, i, s);
     if (btn) timerBtns.push(btn);
     return h('li.step',
       h('div.step-head', h('span.step-num', String(i + 1)), modeBadge(s), btn),
-      h('p', s.texte)
+      h('p', s.texte),
+      stepIngBoxes[i],
+      guideBox(r, i)
     );
   });
 
@@ -79,6 +103,7 @@ export function recipeView(id) {
     minus.disabled = portions <= 1;
     plus.disabled = portions >= cookeo.personnes_max;
     ingList.replaceChildren(...r.ingrédients.map((ing) => ingredientRow(ing, match, r.portions, portions)));
+    stepIngBoxes.forEach((box, i) => box.replaceChildren(...[stepIngredients(r, r.étapes[i], portions)].filter(Boolean)));
     scaleNote.textContent = portions !== r.portions
       ? `Quantités recalculées (recette de base : ${r.portions}). Temps de cuisson inchangés.`
       : '';

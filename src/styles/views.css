@@ -266,3 +266,31 @@ body[data-route='cuisine'] #app { padding-bottom: calc(var(--safe-b) + 1rem); pa
 .rcard-actions .act { min-height: 40px; font-size: .78rem; padding: .3rem .5rem; text-decoration: none; }
 .rcard-actions .btn-ghost.act { background: rgba(10, 15, 44, .6); }
 .rcard-actions .act:disabled { opacity: .6; }
+
+/* Instructions détaillées : ingrédients par étape + guide Cookeo */
+.step-ings { list-style: none; margin: .45rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem; }
+.step-ings li {
+  font-size: .78rem; padding: .15rem .55rem; border-radius: 999px; color: var(--ink);
+  background: rgba(211, 154, 44, .14); border: 1px solid rgba(138, 93, 18, .3);
+}
+.step-ings b { color: var(--gold-3); }
+.guide { margin-top: .5rem; border-left: 3px solid var(--gold-2); padding-left: .6rem; }
+.guide summary { cursor: pointer; font-size: .8rem; font-weight: 700; color: var(--gold-3); }
+.guide ul { margin: .35rem 0 0; padding-left: 1rem; }
+.guide li { font-size: .82rem; color: var(--ink-soft); line-height: 1.4; margin-bottom: .2rem; }
+.cook-step-ings { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+.cook-step-ings:empty { display: none; }
+.cook-step-ings .step-ings { justify-content: center; }
+.cook-step-ings .step-ings li { font-size: .9rem; }
+.cook-sub { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 700; }
+.cook-guide { width: 100%; text-align: left; }
+.cook-guide:empty { display: none; }
+
+/* Filtres plus visibles */
+.filters summary {
+  border-radius: var(--radius); background: linear-gradient(180deg, rgba(58, 76, 156, .55), rgba(35, 48, 110, .55));
+}
+.filters summary::after { content: '▾'; margin-left: auto; color: var(--gold-1); transition: transform .2s; }
+.filters:not([open]) summary::after { transform: rotate(-90deg); }
+.step-ings li.again { opacity: .6; font-style: italic; }
+.step-ings small { color: var(--ink-soft); }

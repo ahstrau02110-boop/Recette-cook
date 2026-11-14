@@ -112,3 +112,22 @@ test('liste de courses : fusion par unité, selon goût, recochage', () => {
   l = addToList(l, [{ nom: 'sel', quantité: null, unité: 'selon goût' }], 'c');
   assert.equal(l.find((i) => i.id === 'sel').coché, false);
 });
+
+import { hasProtein, usesMode, SORTS } from '../src/engine/filters.js';
+
+test('filtres protéine et mode Cookeo', () => {
+  const vol = filterRecipes(recipes, { protéines: ['volaille'] });
+  assert.ok(vol.length > 10 && vol.every((r) => hasProtein(r, 'volaille')));
+  const vap = filterRecipes(recipes, { modes: ['vapeur'] });
+  assert.ok(vap.length > 5 && vap.every((r) => usesMode(r, 'vapeur')));
+  const both = filterRecipes(recipes, { protéines: ['poisson & mer'], modes: ['vapeur'] });
+  assert.ok(both.some((r) => r.id === 'saumon-vapeur-legumes'));
+});
+
+test('tris du catalogue', () => {
+  const ms = recipes.map((r) => matchRecipe(r, new Set(), subs));
+  const fast = [...ms].sort(SORTS.rapide.cmp);
+  assert.ok(totalTime(fast[0].recipe) <= totalTime(fast.at(-1).recipe));
+  const cheap = [...ms].sort(SORTS.budget.cmp);
+  assert.equal(cheap[0].recipe.budget, '€');
+});

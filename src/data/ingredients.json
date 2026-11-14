@@ -306,6 +306,14 @@
             "maïs en boîte",
             "maïs doux"
           ]
+        },
+        {
+          "id": "fenouil",
+          "nom": "Fenouil",
+          "emoji": "🌿",
+          "synonymes": [
+            "bulbe de fenouil"
+          ]
         }
       ]
     },
@@ -364,6 +372,24 @@
           "emoji": "🍇",
           "synonymes": [
             "raisins"
+          ]
+        },
+        {
+          "id": "ananas",
+          "nom": "Ananas",
+          "emoji": "🍍",
+          "synonymes": [
+            "ananas en boîte",
+            "ananas au sirop"
+          ]
+        },
+        {
+          "id": "pruneaux",
+          "nom": "Pruneaux",
+          "emoji": "🟣",
+          "synonymes": [
+            "pruneaux d'Agen",
+            "pruneaux dénoyautés"
           ]
         }
       ]
@@ -512,6 +538,30 @@
             "blanquette de veau",
             "épaule de veau",
             "tendron"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "agneau",
+          "nom": "Agneau",
+          "emoji": "🐑",
+          "synonymes": [
+            "épaule d'agneau",
+            "collier d'agneau",
+            "sauté d'agneau"
+          ],
+          "tags": [
+            "viande"
+          ]
+        },
+        {
+          "id": "merguez",
+          "nom": "Merguez",
+          "emoji": "🌭",
+          "synonymes": [
+            "merguez"
           ],
           "tags": [
             "viande"
@@ -731,6 +781,20 @@
             "animal",
             "lactose"
           ]
+        },
+        {
+          "id": "reblochon",
+          "nom": "Reblochon",
+          "emoji": "🧀",
+          "synonymes": [
+            "fromage à raclette",
+            "raclette",
+            "tomme"
+          ],
+          "tags": [
+            "animal",
+            "lactose"
+          ]
         }
       ]
     },
@@ -845,6 +909,65 @@
           "tags": [
             "gluten"
           ]
+        },
+        {
+          "id": "gnocchis",
+          "nom": "Gnocchis",
+          "emoji": "🥟",
+          "synonymes": [
+            "gnocchi",
+            "gnocchis à poêler"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "nouilles",
+          "nom": "Nouilles",
+          "emoji": "🍜",
+          "synonymes": [
+            "nouilles chinoises",
+            "nouilles aux œufs",
+            "udon",
+            "ramen"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "polenta",
+          "nom": "Polenta",
+          "emoji": "🌽",
+          "synonymes": [
+            "semoule de maïs"
+          ]
+        },
+        {
+          "id": "flocons_avoine",
+          "nom": "Flocons d'avoine",
+          "emoji": "🥣",
+          "synonymes": [
+            "avoine",
+            "porridge"
+          ],
+          "tags": [
+            "gluten"
+          ]
+        },
+        {
+          "id": "pain",
+          "nom": "Pain",
+          "emoji": "🥖",
+          "synonymes": [
+            "pain rassis",
+            "baguette",
+            "pain de mie"
+          ],
+          "tags": [
+            "gluten"
+          ]
         }
       ]
     },
@@ -907,6 +1030,15 @@
           "synonymes": [
             "pois cassés verts"
           ]
+        },
+        {
+          "id": "tofu",
+          "nom": "Tofu",
+          "emoji": "⬜",
+          "synonymes": [
+            "tofu ferme",
+            "tofu fumé"
+          ]
         }
       ]
     },
@@ -950,6 +1082,15 @@
           "emoji": "🥥",
           "synonymes": [
             "crème de coco"
+          ]
+        },
+        {
+          "id": "olives",
+          "nom": "Olives",
+          "emoji": "🫒",
+          "synonymes": [
+            "olives vertes",
+            "olives noires"
           ]
         }
       ]
@@ -1018,6 +1159,15 @@
             "maizena",
             "fécule"
           ]
+        },
+        {
+          "id": "cacao",
+          "nom": "Cacao en poudre",
+          "emoji": "🍫",
+          "synonymes": [
+            "cacao non sucré",
+            "chocolat en poudre"
+          ]
         }
       ]
     },
@@ -1074,6 +1224,15 @@
           ],
           "tags": [
             "gluten"
+          ]
+        },
+        {
+          "id": "cidre",
+          "nom": "Cidre",
+          "emoji": "🍏",
+          "synonymes": [
+            "cidre brut",
+            "cidre doux"
           ]
         }
       ]

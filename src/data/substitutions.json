@@ -193,6 +193,9 @@
     "alternatives": [
       [
         "pates"
+      ],
+      [
+        "nouilles"
       ]
     ]
   },
@@ -423,6 +426,9 @@
     "alternatives": [
       [
         "chorizo"
+      ],
+      [
+        "merguez"
       ]
     ]
   },
@@ -564,6 +570,122 @@
     "alternatives": [
       [
         "sucre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "nouilles",
+    "alternatives": [
+      [
+        "spaghetti"
+      ],
+      [
+        "pates"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "polenta",
+    "alternatives": [
+      [
+        "semoule"
+      ]
+    ],
+    "note": "Texture plus granuleuse."
+  },
+  {
+    "ingrédient": "reblochon",
+    "alternatives": [
+      [
+        "fromage_rape"
+      ],
+      [
+        "mozzarella"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "merguez",
+    "alternatives": [
+      [
+        "saucisse"
+      ],
+      [
+        "chorizo"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "agneau",
+    "alternatives": [
+      [
+        "boeuf_braiser"
+      ],
+      [
+        "porc_echine"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "cidre",
+    "alternatives": [
+      [
+        "vin_blanc"
+      ],
+      [
+        "bouillon_volaille",
+        "pomme"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "pruneaux",
+    "alternatives": [
+      [
+        "raisins_secs"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "cacao",
+    "alternatives": [
+      [
+        "chocolat"
+      ]
+    ],
+    "note": "Remplacer 10 g de cacao par 20 g de chocolat noir fondu."
+  },
+  {
+    "ingrédient": "chocolat",
+    "alternatives": [
+      [
+        "cacao",
+        "beurre"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "gnocchis",
+    "alternatives": [
+      [
+        "pates"
+      ]
+    ],
+    "note": "Cuisson sous pression 4 min avec de l’eau à hauteur."
+  },
+  {
+    "ingrédient": "tofu",
+    "alternatives": [
+      [
+        "pois_chiches"
+      ]
+    ]
+  },
+  {
+    "ingrédient": "fenouil",
+    "alternatives": [
+      [
+        "celeri"
       ]
     ]
   }
